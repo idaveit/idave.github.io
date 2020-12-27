@@ -1,16 +1,16 @@
 ---
 layout: page
 title: About me
-subtitle: Why you'd want to go on a date with me
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+Hi, I am Davide.
 
-- I rock a great mustache
-- I'm extremely loyal to my family
+I am Head of Technology at Duet Group, based in the UK.
 
-What else do you need?
+During my career I often found myself trying to solve all sorts of IT issues, from Windows problems to firewall issues. And more than once, at the end, I thought to myself: I wish someone had written about this before!
 
-### My story
+In this blog I write about how I found solutions to some of these problems I encountered, for the benefit of the wider IT community. Hopefully, someone will read something here and benefit from it.
 
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](https://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+If you want to know more about me and my professional career, here is a link to my LinkedIn Profile:
+
+<div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="horizontal" data-theme="light" data-vanity="davide-ronchi-uk"><a class="LI-simple-link" href='https://uk.linkedin.com/in/davide-ronchi-uk?trk=profile-badge'>Davide Ronchi</a></div>
