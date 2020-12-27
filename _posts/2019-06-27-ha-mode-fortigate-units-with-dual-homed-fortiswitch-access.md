@@ -4,7 +4,7 @@ title: HA-mode FortiGate units with dual-homed FortiSwitch access
 comments: true
 ---
 
-Looking at the Fortinet documentation for FortiOS 6.0, it doesn’t say a lot about [how to set up HA-mode FortiGate units with dual-homed FortiSwitch access](https://help.fortinet.com/fos60hlp/60/Content/FortiOS/fortigate-managing-fortiswitch/Stacking.htm#HA-mode5). It just shows a diagram, and it seems to assume that everything is clear from that diagram.
+Looking at the Fortinet documentation for FortiOS 6.0, it doesn’t say a lot about [how to set up HA-mode FortiGate units with dual-homed FortiSwitch access](https://help.fortinet.com/fos60hlp/60/Content/FortiOS/fortigate-managing-fortiswitch/Stacking.htm#HA-mode5){:target="_blank"}. It just shows a diagram, and it seems to assume that everything is clear from that diagram.
 
 It wasn’t very clear for me, so I went ahead and asked Fortinet TAC for some help.
 
@@ -30,7 +30,8 @@ Yes it can. The switches will recognize that.
 1. Set up the Fortigate with ports 1,2 as an Aggregate FortiLink, and enable fortilink-split-interface on the aggregate.
 2. Connect the two core switches with all their cables. They will all appear on the Fortigate and will set up a trunk with each other automatically. The two cables between the two Fortiswitches will be seen correctly.
 3. From the CLI of the Fortigate, do exec ssh admin@<FSW-IP> to log in to the first Fortiswitch. The bit in red is the only command you should add, the rest should be pre-filled in by the Fortilink autoconfiguration process.
-```config switch trunk
+```
+config switch trunk
     edit "D243Z14000288-0" // name derived from FortiSwitch-2 SN
         set mode lacp-active
         set auto-isl 1
