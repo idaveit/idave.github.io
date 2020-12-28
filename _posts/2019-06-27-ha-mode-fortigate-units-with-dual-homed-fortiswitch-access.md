@@ -10,7 +10,7 @@ It wasn’t very clear for me, so I went ahead and asked Fortinet TAC for some h
 
 This is the set up that I am about to deploy in one of our sites:
 
-![Crepe](https://s3-media3.fl.yelpcdn.com/bphoto/cQ1Yoa75m2yUFFbY2xwuqw/348s.jpg)
+![image](/assets/img/posts_img/2019-06-27-ha-mode-fortigate-units-with-dual-homed-fortiswitch-access/2019-06-27-ha-mode-fortigate-units-with-dual-homed-fortiswitch-access-diagram.png)
 
 The diagram shows my intended set-up, with two Fortigates in HA, two “core” Fortiswitches and two “access” fortiswitches. In reality, we intend to use the core Fortiswitches for access too, not just as pure Core switches. The little numbers next to the cables are the port numbers on nearby devices.
 
