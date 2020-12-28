@@ -90,7 +90,7 @@ In my setup, I bought a [DC connector compatible with the above AC adapter](http
 ![image](/assets/img/posts_img/2020-12-28-a-european-solution-for-the-unifi-g4-doorbell/inside_box.jpg)
 {: refdef}
 
-And here it is, in operation. Voltage reading at the doorbell is 18.8V. Since I haven't yet found a chime I like, I am using the multimeter as a chime.
+And here it is, in operation. Voltage reading at the doorbell is 18.8V. Since I haven't yet found a chime I like, in the video I am using the multimeter as a chime.
 
 <div style="text-align:center"><iframe width="420" height="236" src="https://www.youtube.com/embed/Z3jU7bkmJjY" frameborder="0" allowfullscreen></iframe></div>
 
