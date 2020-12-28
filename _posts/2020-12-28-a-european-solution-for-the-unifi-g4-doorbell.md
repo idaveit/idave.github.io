@@ -4,7 +4,7 @@ title: A European solution for the UniFi Protect G4 Doorbell
 comments: true
 ---
 
-Having previously invested in a UniFi Protect surveillance infrastucture, I recently bought a UniFi G4 Doorbell from the States. In the pursuit of a proper set-up, I did a lot of googling, and found a lot of information, some of which brilliant, some useful, and some outright wrong. This post is meant as recap of my findings.
+Having previously invested in a UniFi Protect surveillance infrastructure, I recently bought a UniFi G4 Doorbell from the States. In the pursuit of a proper set-up, I did a lot of googling, and found a lot of information, some of which brilliant, some useful, and some outright wrong. This post is meant as recap of my findings.
 
 <!-- more -->
 
@@ -28,9 +28,9 @@ In looking for information, I found many people have common misconceptions about
 
 ### You can use any AC adapter, provided that it's more powerful than the requirements of the doorbell
 
-The [datasheet](http://ui.com/ds/uvc-g4-doorbell-ds){:target="_blank"} says the doorbell needs 16-24VAC, and has 12VA max power consumption. VA stands for volt-amperes, and it is a way to express apparent power in AC circuits.
+The [data sheet](http://ui.com/ds/uvc-g4-doorbell-ds){:target="_blank"} says the doorbell needs 16-24VAC, and has 12VA max power consumption. VA stands for volt-amperes, and it is a way to express apparent power in AC circuits.
 
-Many adapters state their power in Amps, so understand what AC adapter to use, you need to look at the output voltage of the adapter, and divide the Volt-Amp value by the output voltage. So, for example, if you have a 16V adapter, you will need
+Many adapters state their power in Amperes, so understand what AC adapter to use, you need to look at the output voltage of the adapter, and divide the Volt-Amp value by the output voltage. So, for example, if you have a 16V adapter, you will need
 
 <script type="text/javascript">
 window.MathJax = {
@@ -69,7 +69,7 @@ When you press the button on the UniFi Doorbell, the doorbell temporarily shuts 
 The lazyadmin.nl article uses a 24V AC adapter and a 24V relay. I wanted to use a lower-power adapter. The tolerance of unregulated AC adapters illustrated above precisely the reason why the doorbell takes between 16V and 24V. It's better to stick to the lower end of this range, e.g. 16-18V, because if you use a higher-power adapter, it will output more than 18V.
 
 I bought:
-- A [18V 0.8A AC-AC adaptor](https://www.acadaptorsrus.co.uk/18v-0-8a-ac-ac-transformer-adaptor-power-supply-18vac-800ma-14-4va/){:target="_blank"} from AC Adaptors R Us Ltd. Very solid product, runs cool, and outputs 14.4VA.
+- A [18V 0.8A AC-AC adapter](https://www.acadaptorsrus.co.uk/18v-0-8a-ac-ac-transformer-adaptor-power-supply-18vac-800ma-14-4va/){:target="_blank"} from AC Adaptors R Us Ltd. Very solid product, runs cool, and outputs 14.4VA.
 - A [Very Handy Little Relay](https://www.amazon.co.uk/gp/product/B00418XB6M/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=B00418XB6M&linkCode=as2&tag=idave05-21&linkId=f4ddecd3ef40aa0e01dc17a60ed095b8){:target="_blank"}. This relay takes any input voltage between 6 and 28V, DC or AC.
 
 You then have to connect everything like this:
