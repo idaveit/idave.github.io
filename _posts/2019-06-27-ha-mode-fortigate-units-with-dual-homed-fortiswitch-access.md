@@ -41,7 +41,7 @@ Yes it can. The switches will recognize that.
             set members "port21" "port22"             
         end
     ```
-4. Do the same on the other Fortiswitch
+4. Do the same on the other Fortiswitch.
 5. At this point the Fortiswitches will set up the ICL for MCLAGs. The Fortigate should recognize that the two Fortiswitches are MCLAG peers and will set up the uplinks between Fortigates and Fortiswitches as MCLAG.
 6. You can then turn off fortilink-split-interface on the Fortigate aggregate interface.
 
