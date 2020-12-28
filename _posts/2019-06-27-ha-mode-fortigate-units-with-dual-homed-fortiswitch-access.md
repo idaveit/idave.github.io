@@ -42,6 +42,7 @@ config switch trunk
     
     The only command you should add is on line 5, the rest should be pre-filled in by the Fortilink autoconfiguration process.
 
+{:start="4"}
 4. Do the same on the other Fortiswitch
 5. At this point the Fortiswitches will set up the ICL for MCLAGs. The Fortigate should recognize that the two Fortiswitches are MCLAG peers and will set up the uplinks between Fortigates and Fortiswitches as MCLAG.
 6. You can then turn off fortilink-split-interface on the Fortigate aggregate interface.
