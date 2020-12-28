@@ -39,8 +39,7 @@ config switch trunk
         set members "port21" "port22"             
     end
 {% endhighlight %}{: style='margin-left:30px;'}
-    
-    The only command you should add is on line 5, the rest should be pre-filled in by the Fortilink autoconfiguration process.
+The only command you should add is line 5, the rest should be pre-filled in by the Fortilink autoconfiguration process.
 
 {:start="4"}
 4. Do the same on the other Fortiswitch
