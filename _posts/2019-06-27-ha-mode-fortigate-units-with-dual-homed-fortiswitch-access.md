@@ -38,7 +38,7 @@ config switch trunk
         set mclag-icl enable
         set members "port21" "port22"             
     end
-{% endhighlight %}{: style='margin-left:30px;'}
+{% endhighlight %}
     The only command you should add is line 5, the rest should be pre-filled in by the Fortilink autoconfiguration process.
 
 {:start="4"}
