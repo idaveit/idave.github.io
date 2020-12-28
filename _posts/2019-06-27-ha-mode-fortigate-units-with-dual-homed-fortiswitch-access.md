@@ -29,7 +29,7 @@ Yes it can. The switches will recognize that.
 
 1. Set up the Fortigate with ports 1,2 as an Aggregate FortiLink, and enable fortilink-split-interface on the aggregate.
 2. Connect the two core switches with all their cables. They will all appear on the Fortigate and will set up a trunk with each other automatically. The two cables between the two Fortiswitches will be seen correctly.
-3. From the CLI of the Fortigate, do exec ssh admin@<FSW-IP> to log in to the first Fortiswitch. The bit in red is the only command you should add, the rest should be pre-filled in by the Fortilink autoconfiguration process.
+3. From the CLI of the Fortigate, do exec ssh admin@<FSW-IP> to log in to the first Fortiswitch.
     {% highlight plaintext linenos %}
 config switch trunk
     edit "D243Z14000288-0" // name derived from FortiSwitch-2 SN
@@ -39,7 +39,7 @@ config switch trunk
         set members "port21" "port22"             
     end
 {% endhighlight %}{: style='margin-left:30px;'}
-{:start="4"}
+    The only command you should add is on line 5, the rest should be pre-filled in by the Fortilink autoconfiguration process.
 4. Do the same on the other Fortiswitch
 5. At this point the Fortiswitches will set up the ICL for MCLAGs. The Fortigate should recognize that the two Fortiswitches are MCLAG peers and will set up the uplinks between Fortigates and Fortiswitches as MCLAG.
 6. You can then turn off fortilink-split-interface on the Fortigate aggregate interface.
