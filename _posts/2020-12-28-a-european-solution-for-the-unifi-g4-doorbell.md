@@ -10,6 +10,10 @@ Having previously invested in a UniFi Protect surveillance infrastructure, I rec
 
 ## Introduction
 
+{:refdef: style="text-align: center;"}
+![image](/assets/img/posts_img/2020-12-28-a-european-solution-for-the-unifi-g4-doorbell/doorbell.webp)
+{: refdef}
+
 The UniFi G4 Doorbell is a brilliant piece of kit, well-integrated with the UniFi Protect video surveillance infrastructure. The platform allows you to store data locally, without a subscription and without the [creepiness that comes](https://www.theregister.com/2020/01/28/ring_data_sale/){:target="_blank"} [with Ring](https://www.theregister.com/2020/11/24/amazon_sidewalk_opt_out/){:target="_blank"}. This is also a double-edged sword though, since you can't run the doorbell stand-alone.
 
 Like many smart doorbells, it connects to the network via WiFi, but takes power from an existing wired doorbell circuit. It is intended to be a drop-in replacement for a US doorbell with chime, which normally run on 16V AC power. In Europe most doorbell circuits run on 8V AC power, which means that we need to do some electrical wizardry to get it to work.
