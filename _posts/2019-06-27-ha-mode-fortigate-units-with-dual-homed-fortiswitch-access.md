@@ -30,7 +30,7 @@ Yes it can. The switches will recognize that.
 1. Set up the Fortigate with ports 1,2 as an Aggregate FortiLink, and enable fortilink-split-interface on the aggregate.
 2. Connect the two core switches with all their cables. They will all appear on the Fortigate and will set up a trunk with each other automatically. The two cables between the two Fortiswitches will be seen correctly.
 3. From the CLI of the Fortigate, do exec ssh admin@<FSW-IP> to log in to the first Fortiswitch. The bit in red is the only command you should add, the rest should be pre-filled in by the Fortilink autoconfiguration process.
-{% highlight linenos %}
+{% highlight plaintext linenos %}
 config switch trunk
     edit "D243Z14000288-0" // name derived from FortiSwitch-2 SN
         set mode lacp-active
