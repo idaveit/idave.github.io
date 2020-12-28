@@ -8,6 +8,8 @@ Looking at the Fortinet documentation for FortiOS 6.0, it doesn’t say a lot ab
 
 It wasn’t very clear for me, so I went ahead and asked Fortinet TAC for some help.
 
+<!-- more -->
+
 This is the set up that I am about to deploy in one of our sites:
 
 {:refdef: style="text-align: center;"}
