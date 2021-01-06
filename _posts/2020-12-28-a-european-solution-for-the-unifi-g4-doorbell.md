@@ -58,17 +58,19 @@ Ubiquiti's own [Power Supply](http://ui.com/ds/uvc-g4-doorbell-ps-ds){:target="_
 
 $$20V \cdot 0.7A = 14VA$$
 
+So, 14VA is plenty.
+
 The lazyadmin.nl article I mentioned earlier uses a 24V/30VA Vemer VN319000 adapter. But when I ran the Ubiquiti doorbell with it, it output 30.5V.
 
 {:refdef: style="text-align: center;"}
 ![image](/assets/img/posts_img/2020-12-28-a-european-solution-for-the-unifi-g4-doorbell/tester_highvolt_photo.jpg)
 {: refdef}
 
-Vemer's technical assistance team has confirmed that this is within tolerance of the VN319000. They said that with an unregulated adapter - and most of the adapters you normally buy are unregulated - if your load is lower than the maximum load, then the output voltage may be higher than its rated output voltage. I honestly don't know if this tolerance margin justifies the Vemer adapter being so far off its rated 24V, but nevertheless I decided not to use a device whose output is far outside the Ubiquiti specification.
+Vemer's technical assistance team has confirmed that this is within tolerance of the VN319000. They said that with an unregulated adapter - and most of the adapters you normally buy will be unregulated - if your load is lower than the maximum load, then the output voltage may be higher than its rated output voltage. I honestly don't know if this tolerance margin justifies the Vemer adapter being so far off its rated 24V, but nevertheless I decided not to use a device whose output is outside the Ubiquiti specification.
 
 Also, many articles online say that the transformer you use should be powerful enough to power both the doorbell and the chime at the same time. In reality, when you press the button on the UniFi Doorbell, the doorbell temporarily shuts its internal power and gives all the power to the chime. This means that at any given time, you're powering either the chime, or the doorbell, but never both. Ubiquiti support has confirmed that this is exactly how it's meant to operate. 
 
-Morale of the story: an adapter rated about 12-14VA is plenty enough.
+Morale of the story: you need an adapter rated about 12-14VA, and not much more than that.
 
 ## Enough talking. How do I do this?
 
