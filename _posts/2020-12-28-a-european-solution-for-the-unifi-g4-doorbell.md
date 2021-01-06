@@ -26,7 +26,7 @@ My main inspiration was [this article on lazyadmin.nl](https://lazyadmin.nl/home
 
 [This article](https://www.instructables.com/Making-a-Door-Bell-Chime-With-Integrated-Transform/){:target="_blank"} is also useful, even though it applies to the Nest Hello.
 
-[My uncle Giovanni](https://www.linkedin.com/in/giovanni-ronchi-5999b744/){:target="_blank"}, who is MEng in Electronic Engineering, has helped me with the electronics part of this post.
+[My uncle Giovanni](https://www.linkedin.com/in/giovanni-ronchi-5999b744/){:target="_blank"}, who is an Electronics Engineer, has reviewed and corrected the bit about power adapters.
 
 ## How to choose a power adapter
 
