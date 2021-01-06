@@ -34,9 +34,7 @@ The [data sheet](http://ui.com/ds/uvc-g4-doorbell-ds){:target="_blank"} says the
 
 Many adapters state their power in Amperes, so to understand what AC adapter to use, you need to look at the output voltage of the adapter, and divide the Volt-Amp value by the output voltage. It's simple maths.
 
-So, for example, if you have a 16V adapter, you will need at least[^1]
-
-[^1]: This is just a conservative estimate. In reality things are a bit more complex. For instance, it is very likely that the circuitry inside the doorbell requires DC current at a stable voltage. This means that the doorbell is likely to incorporate a voltage regulator and an AC-DC converter inside the casing. Voltage regulators dissipate some energy to bring the output voltage down to the necessary level. The higher the input voltage, the more they dissipate. Because of that, it is very possible that Ubiquiti measured the rated 12VA "max power consumption" at 24V, hence it may be that at 16V the doorbell uses 11VA or even less. Without knowing more about the internals of the doorbell, we will never know exactly.
+So, for example, if you have a 16V adapter, you will need at least
 
 <script type="text/javascript">
 window.MathJax = {
@@ -53,6 +51,10 @@ window.MathJax = {
 </script>
 
 $$\frac{12 \bcancel{V} A}{16\bcancel{V}} = 0.75A$$
+
+This is just a reasonable estimate. In reality things are a bit more complex and from the electronics point of view, you're probably likely to need less than that[^1].
+
+[^1]: A reasonable assumption is that the circuitry inside the doorbell requires DC current at a fixed voltage. To achieve that, the doorbell circuitry probably incorporates a voltage regulator and an AC-DC converter. Voltage regulators work by dissipating some energy to bring the output voltage down to the necessary fixed level, so the higher the input voltage, the more energy they need to dissipate to reach the desired level. As such, the point of maximum current draw of the device will be towards the high end of its voltage range, and its current requirements will drop as you feed it with lower voltages. Taking all of this into account, Ubiquiti says that its "max power consumption" is 12VA, so this is likely to be at 24V. As such, it may be that at 16V the doorbell actually uses 11VA or even less. Without knowing more about the internals of the doorbell, it is difficult to say.
 
 Ubiquiti's own [Power Supply](http://ui.com/ds/uvc-g4-doorbell-ps-ds){:target="_blank"} is 20V, 0.7A, so
 
