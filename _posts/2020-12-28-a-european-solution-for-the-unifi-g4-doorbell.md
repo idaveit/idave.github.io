@@ -26,17 +26,17 @@ My main inspiration was [this article on lazyadmin.nl](https://lazyadmin.nl/home
 
 [This article](https://www.instructables.com/Making-a-Door-Bell-Chime-With-Integrated-Transform/){:target="_blank"} is also useful, even though it applies to the Nest Hello.
 
-## Two common misconceptions about power adapters
+[My uncle Giovanni](https://www.linkedin.com/in/giovanni-ronchi-5999b744/){:target="_blank"}, who is MEng in Electronic Engineering, has helped me with the electronics part of this post.
 
-In looking for information, I found many people have common misconceptions about how to power smart doorbells in general, and the UniFi Doorbell in particular.
-
-### You can use any AC adapter, provided that it's more powerful than the requirements of the doorbell
+## How to choose a power adapter
 
 The [data sheet](http://ui.com/ds/uvc-g4-doorbell-ds){:target="_blank"} says the doorbell needs 16-24VAC, and has 12VA max power consumption. VA stands for volt-amperes, and it is a way to express apparent power in AC circuits.
 
 Many adapters state their power in Amperes, so to understand what AC adapter to use, you need to look at the output voltage of the adapter, and divide the Volt-Amp value by the output voltage. It's simple maths.
 
-So, for example, if you have a 16V adapter, you will need
+So, for example, if you have a 16V adapter, you will need at least[^1]
+
+[^1]: This is just a conservative estimate. In reality things are a bit more complex. For instance, it is very likely that the circuitry inside the doorbell requires DC current at a stable voltage. This means that the doorbell is likely to incorporate a voltage regulator and an AC-DC converter inside the casing. Voltage regulators dissipate some energy to bring the output voltage down to the necessary level. The higher the input voltage, the more they dissipate. Because of that, it is very possible that Ubiquiti measured the rated 12VA "max power consumption" at 24V, hence it may be that at 16V the doorbell uses 11VA or even less. Without knowing more about the internals of the doorbell, we will never know exactly.
 
 <script type="text/javascript">
 window.MathJax = {
@@ -54,30 +54,28 @@ window.MathJax = {
 
 $$\frac{12 \bcancel{V} A}{16\bcancel{V}} = 0.75A$$
 
-And after all, Ubiquiti's own [Power Supply](http://ui.com/ds/uvc-g4-doorbell-ps-ds){:target="_blank"} is 20V, 0.7A, so
+Ubiquiti's own [Power Supply](http://ui.com/ds/uvc-g4-doorbell-ps-ds){:target="_blank"} is 20V, 0.7A, so
 
 $$20V \cdot 0.7A = 14VA$$
 
-So, all you need is 12-14VA.
-
-Even if conventional wisdom and many online articles say that you can use a higher-amp adapter to power your lower-amp device, that's not entirely true. If you're planning to use a more powerful adapter, you need to check that it is *regulated*, i.e. that it regulates the output voltage depending on load. Many AC-DC adapters are regulated, but **most AC-AC adapters aren't**. With an unregulated adapter, if your load is lower than the maximum load, the output voltage will be higher than its rated voltage.
-
-In fact, the lazyadmin.nl article I mentioned earlier uses a 24V/30VA Vemer VN319000 adapter. But when your only draw is 14VA, then the adapter will output much more than 24V. When I tested it, it output 30.5V, risking to damage the doorbell! Vemer's own technical assistance team has confirmed that higher voltage under a lighter-than-rated load is normal.
+The lazyadmin.nl article I mentioned earlier uses a 24V/30VA Vemer VN319000 adapter. But when I ran the Ubiquiti doorbell with it, it output 30.5V.
 
 {:refdef: style="text-align: center;"}
 ![image](/assets/img/posts_img/2020-12-28-a-european-solution-for-the-unifi-g4-doorbell/tester_highvolt_photo.jpg)
 {: refdef}
 
-### You need an AC adapter powerful enough to power both doorbell and chime at the same time
+Vemer's technical assistance team has confirmed that this is within tolerance of the VN319000. They said that with an unregulated adapter - and most of the adapters you normally buy are unregulated - if your load is lower than the maximum load, then the output voltage may be higher than its rated output voltage. I honestly don't know if this tolerance margin justifies the Vemer adapter being so far off its rated 24V, but nevertheless I decided not to use a device whose output is far outside the Ubiquiti specification.
 
-When you press the button on the UniFi Doorbell, the doorbell temporarily shuts its internal power, and gives all the power to the chime. This means that at any given time, you're powering either the chime, or the doorbell, but never both. Ubiquiti support has confirmed that this is exactly how it's meant to operate.
+Also, many articles online say that the transformer you use should be powerful enough to power both the doorbell and the chime at the same time. In reality, when you press the button on the UniFi Doorbell, the doorbell temporarily shuts its internal power and gives all the power to the chime. This means that at any given time, you're powering either the chime, or the doorbell, but never both. Ubiquiti support has confirmed that this is exactly how it's meant to operate. 
+
+Morale of the story: an adapter rated about 12-14VA is plenty enough.
 
 ## Enough talking. How do I do this?
 
-The lazyadmin.nl article uses a 24V AC adapter and a 24V relay. I wanted to use a lower-power adapter, hence I used a different relay. The tolerance of unregulated AC adapters illustrated above is precisely the reason why the doorbell takes between 16V and 24V. It's better to stick to the lower end of this range, e.g. 16-18V, because if you use a higher-power adapter it will output more than 18V.
+The lazyadmin.nl article uses a 24V AC adapter and a 24V relay. Because I wanted to use a lower-power adapter, I also had to find a different relay. Most unregulated AC adapters have a tolerance of ±10%, so it is best to choose an adapter whose tolerance will fall completely between Ubiquiti's rated voltages.
 
 I bought:
-- A [18V 0.8A AC-AC adapter](https://www.acadaptorsrus.co.uk/18v-0-8a-ac-ac-transformer-adaptor-power-supply-18vac-800ma-14-4va/){:target="_blank"} from AC Adaptors R Us Ltd. Very solid product, runs cool, and outputs 14.4VA.
+- A [18V 0.8A AC-AC adapter](https://www.acadaptorsrus.co.uk/18v-0-8a-ac-ac-transformer-adaptor-power-supply-18vac-800ma-14-4va/){:target="_blank"} from AC Adaptors R Us Ltd. Very solid product, runs cool, and outputs 14.4VA. 18V±10% is 16.2-19.8V, which is perfectly within Ubiquiti's range of 16 to 24V.
 - A [Very Handy Little Relay](https://www.amazon.co.uk/gp/product/B00418XB6M/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=B00418XB6M&linkCode=as2&tag=idave05-21&linkId=f4ddecd3ef40aa0e01dc17a60ed095b8){:target="_blank"}. This relay takes any input voltage between 6 and 28V, DC or AC.
 
 I then connected everything like this:
@@ -108,3 +106,5 @@ This post was the result of *much* trial and error. Here is a list of other adap
 | [Vemer VN319000 30VA AC Adapter](https://www.amazon.co.uk/gp/product/B00F4QGVIA/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=idave05-21&creative=6738&linkCode=as2&creativeASIN=B00F4QGVIA&linkId=2aa6d554a41ba6232999b28aa9bb9cda){:target="_blank"} | As mentioned above, it was too powerful and output 30.5V. |
 | [Vemer VN317400 15VA AC Adapter](https://www.amazon.co.uk/gp/product/B00F4QDJB2/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=idave05-21&creative=6738&linkCode=as2&creativeASIN=B00F4QDJB2&linkId=018b38450857a369a2e4b2a047e4d251){:target="_blank"} | Even though it's rated at 15VA, which would make it theoretically perfect for this application, it still output 31V! |
 | [PROTEK 16V 8VA BT8-16 AC Adapter](https://www.amazon.co.uk/gp/product/B07KZYK8QW/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=idave05-21&creative=6738&linkCode=as2&creativeASIN=B07KZYK8QW&linkId=be99009754a492fd51f167970c3a2b83){:target="_blank"} | One of my initial attempts. Would power up the doorbell, but since it's rated 8VA it's probably too weak. |
+
+## Footnotes
